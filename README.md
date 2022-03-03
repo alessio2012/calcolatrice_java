@@ -1,7 +1,7 @@
 
 ![Calcolatrice](https://i.imgur.com/gMMWWK2.png)
 
-> Per eventuali segnalazioni di BUG o problematica, si invita a caricare la propria segnalazione, contattandomi in privato o caricandolo nella sezione PullRequests
+> Per eventuali segnalazioni di BUG o problematica, si invita a caricare la propria segnalazione, contattandomi in privato o caricandolo nella sezione "issets"
 
 <hr>
 
