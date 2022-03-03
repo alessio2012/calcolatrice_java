@@ -662,75 +662,54 @@ public class Calcolatrice extends javax.swing.JFrame implements KeyListener {
         else op = 1;
         
         for( k=0;k<=str.length() - 1 ; k++){
-
             switch( str.charAt(k) ) {
-                case '+' :
-                    {
+                case '+' : {
                        id_operation = 1;
                        tmpString.append( str.substring( 0, k) );
                        str.replace( 0, k+1, "");
                        op = op + Double.parseDouble( tmpString.toString() );
-
                        tmpString.delete( 0, tmpString.length() );
-
-                       k=0;                                       
-
-
+                       k=0;            
+                    
                        break;
                     }
-                case '-' :
-                    {
+                case '-' :{
                        id_operation = 2;
                        tmpString.append( str.substring( 0, k) );
                        str.replace( 0, k+1, "");
                        op = Double.parseDouble( tmpString.toString() ) - op;
-
                        tmpString.delete( 0, tmpString.length() );
-
                        k=0;                                       
 
                        break;
                     }
-                case '*' :
-                    {
+                case '*' :{
                        id_operation = 3;
                        tmpString.append( str.substring( 0, k) );
                        str.replace( 0, k+1, "");
                        op = op * Double.parseDouble( tmpString.toString() );
-
                        tmpString.delete( 0, tmpString.length() );
-
                        k=0;                                       
-
-
+                    
                        break;
                     }
-                case '/' :
-                    {
+                case '/' : {
                        id_operation = 4;
                        tmpString.append( str.substring( 0, k) );
                        str.replace( 0, k+1, "");
                        op = op * Double.parseDouble( tmpString.toString() );
-
                        tmpString.delete( 0, tmpString.length() );
-
                        k=0;                                       
-
 
                        break;
                     }
                     
-                case '^' :
-                    {
+                case '^' :{
                        tmpString.append( str.substring( 0, k) );
                        str.replace( 0, k+1, "");
-                       
                        op = Math.pow( Double.parseDouble( tmpString.toString() ), Double.parseDouble( str.toString() ) );
-
                        tmpString.delete( 0, tmpString.length() );
-
                        k=0;                                       
-
 
                        break;
                     }
@@ -748,6 +727,7 @@ public class Calcolatrice extends javax.swing.JFrame implements KeyListener {
 
         return op;
     }
+    
     private void btn_resActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resActionPerformed
         int j = 0;
 
@@ -765,29 +745,20 @@ public class Calcolatrice extends javax.swing.JFrame implements KeyListener {
                 j = str.indexOf("(");
 
                 while( str.charAt(j) != ')' ) {
-                    if( str.charAt(j) == ')' ) {
-                        break;
-                    }
                     j++;
                 }
 
                 tmpString.append( str.substring( str.indexOf("(") + 1, j ) );
-
                 str.replace( str.indexOf("("), j + 1, Double.valueOf( calculation(tmpString) ).toString() );
-
                 System.out.println( str );
                 tmpString.delete( 0, tmpString.length() );
-
             }
             
             lbl_output.setText( Double.valueOf( calculation( str ) ).toString() );
-
+            
         } else {
-            
             tmpString.append( str );
-            
-            lbl_output.setText( Double.valueOf( calculation(tmpString) ).toString() );
-            
+            lbl_output.setText( Double.valueOf( calculation(tmpString) ).toString() ); 
         }               
 
     }//GEN-LAST:event_btn_resActionPerformed
